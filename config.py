@@ -12,7 +12,7 @@ class Settings(BaseSettings):
     frontend_url: str = "http://localhost:3000"
 
     model_config = SettingsConfigDict(
-        env_file=str(Path(__file__).resolve().parents[2] / ".env"),
+        env_file=str(Path(__file__).resolve().parent / ".env"),
         case_sensitive=False,
         extra="ignore",
     )
