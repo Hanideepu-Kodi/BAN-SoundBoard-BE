@@ -3,5 +3,6 @@ uvicorn[standard]==0.30.6
 asyncpg==0.29.0
 python-multipart==0.0.9
 PyJWT==2.9.0
+cryptography==42.0.7
 pydantic-settings==2.5.2
 supabase==2.7.4
