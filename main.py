@@ -8,11 +8,11 @@ from fastapi import Depends, FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from storage3.utils import StorageException
 
-from app.auth import AuthUser, get_current_user, get_optional_user
-from app.config import settings
-from app.db import close_pool, get_db, get_service_db, init_pool
-from app.schemas import AddSoundRequest, PlaylistCreate, PlaylistUpdate, ReorderRequest, SoundUpdate
-from app.storage import create_signed_url, delete_path, safe_name, upload_bytes
+from auth import AuthUser, get_current_user, get_optional_user
+from config import settings
+from db import close_pool, get_db, get_service_db, init_pool
+from schemas import AddSoundRequest, PlaylistCreate, PlaylistUpdate, ReorderRequest, SoundUpdate
+from storage import create_signed_url, delete_path, safe_name, upload_bytes
 
 
 app = FastAPI(title="Kodi-board API")
@@ -136,6 +136,11 @@ def map_sound_row(row, signed_url: str, creator: dict | None = None) -> dict:
 @app.get("/health")
 async def health() -> dict:
     return {"status": "ok"}
+
+
+@app.get("/")
+async def root() -> dict:
+    return {"message": "Welcome to the backend."}
 
 
 @app.get("/playlists")

@@ -1,7 +1,7 @@
 import asyncio
 import re
 from supabase import create_client, Client
-from app.config import settings
+from config import settings
 
 
 def safe_name(value: str) -> str:

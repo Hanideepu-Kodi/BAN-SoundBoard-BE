@@ -4,8 +4,8 @@ import jwt
 from jwt import PyJWKClient
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
-from app.config import settings
-from app.db import get_service_db
+from config import settings
+from db import get_service_db
 
 
 security = HTTPBearer(auto_error=False)

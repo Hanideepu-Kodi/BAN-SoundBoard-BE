@@ -1,6 +1,6 @@
 from contextlib import asynccontextmanager
 import asyncpg
-from app.config import settings
+from config import settings
 
 
 pool: asyncpg.Pool | None = None
